@@ -19,5 +19,5 @@ jobs:
     steps:
       - name: Run deploy script on droplet
         run: |
-          ~/bin/deploy-wonderworld.sh "${GITHUB_REF_NAME:-main}"
+          ~/bin/deploy-api.sh "api.wonderworld.jeffolivier.com" "${GITHUB_REF_NAME:-main}"
 
