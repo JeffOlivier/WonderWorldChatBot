@@ -5,7 +5,7 @@ import cors from 'cors';
 
 dotenv.config();
 
-// Create the Express app
+// Create the Express application
 const app = express();
 app.use(
     cors({
