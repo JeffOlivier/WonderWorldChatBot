@@ -30,28 +30,37 @@ const ChatInput = ({ onSubmit }: Props) => {
     };
 
     return (
-        <form
-            onSubmit={submitTheForm}
-            onKeyDown={handleKeyDown}
-            className="flex flex-col gap-2 items-end border-2 p-4 rounded-3xl"
-        >
-            <textarea
-                {...register('prompt', {
-                    required: true,
-                    validate: (data) => data.trim().length > 0,
-                })}
-                autoFocus
-                className="w-full border-0 focus:outline-0 resize-none"
-                placeholder="Ask anything"
-                maxLength={1000}
+        <div className="flex flex-row items-center gap-4 pt-3">
+            <img
+                src="/src/assets/images/botty.png"
+                alt="Botty the AI Robot"
+                className="h-10 md:h-20 flex-none bg-white"
             />
-            <Button
-                disabled={!formState.isValid}
-                className="rounded-full w-9 h-9"
-            >
-                <FaArrowUp />
-            </Button>
-        </form>
+            <div className="flex-1 min-w-0">
+                <form
+                    onSubmit={submitTheForm}
+                    onKeyDown={handleKeyDown}
+                    className="flex flex-row gap-2 items-end border-2 p-3 rounded-3xl"
+                >
+                    <textarea
+                        {...register('prompt', {
+                            required: true,
+                            validate: (data) => data.trim().length > 0,
+                        })}
+                        autoFocus
+                        className="w-full border-0 focus:outline-0 resize-none h-12"
+                        placeholder="Ask me anything about the park"
+                        maxLength={1000}
+                    />
+                    <Button
+                        disabled={!formState.isValid}
+                        className="rounded-full w-9 h-9"
+                    >
+                        <FaArrowUp />
+                    </Button>
+                </form>
+            </div>
+        </div>
     );
 };
 

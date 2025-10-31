@@ -1,11 +1,7 @@
-import ChatBot from './components/chat/ChatBot';
+import Home from './components/Home';
 
 function App() {
-    return (
-        <div className="p-4 h-screen w-full">
-            <ChatBot />
-        </div>
-    );
+    return <Home />;
 }
 
 export default App;

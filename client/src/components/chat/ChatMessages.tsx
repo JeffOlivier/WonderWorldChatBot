@@ -32,7 +32,7 @@ const ChatMessages = ({ messages }: Props) => {
                     key={index}
                     onCopy={onCopyMessage}
                     ref={index === messages.length - 1 ? lastMessageRef : null}
-                    className={`px-3 py-1 rounded-xl prose ${
+                    className={`px-3 py-1 rounded-xl scroll-mt-3 prose ${
                         oneMessage.role === 'user'
                             ? 'bg-blue-600 text-white self-end max-w-1/2'
                             : 'bg-gray-100 text-black self-start max-w-3/4'
