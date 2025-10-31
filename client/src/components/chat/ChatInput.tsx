@@ -2,6 +2,7 @@ import type { KeyboardEvent } from 'react';
 import { FaArrowUp } from 'react-icons/fa';
 import { Button } from '../ui/button';
 import { useForm } from 'react-hook-form';
+import botty from '@/assets/images/botty.png';
 
 export type ChatFormData = {
     prompt: string;
@@ -32,7 +33,7 @@ const ChatInput = ({ onSubmit }: Props) => {
     return (
         <div className="flex flex-row items-center gap-4 pt-3">
             <img
-                src="/src/assets/images/botty.png"
+                src={botty}
                 alt="Botty the AI Robot"
                 className="h-10 md:h-20 flex-none bg-white"
             />

@@ -1,4 +1,5 @@
 import ChatBot from './chat/ChatBot';
+import coverImage from '@/assets/images/wonderworld-cover.png';
 
 const Home = () => {
     return (
@@ -10,7 +11,7 @@ const Home = () => {
                 <div className="flex h-full flex-col overflow-hidden ">
                     {/* 2) Image pinned to the top, spans full width of this container */}
                     <img
-                        src="/src/assets/images/wonderworld-cover.png"
+                        src={coverImage}
                         alt="Header"
                         className="w-full h-64 md:h40 flex-none"
                     />
