@@ -1,22 +1,22 @@
 name: Deploy Wonderworld FE
 
 on:
-  push:
-    branches: [ main ]
-    paths:
-      - 'client/**'
-      - '.github/workflows/deploy-wonderworld-fe.yml'
-  workflow_dispatch:
+    push:
+        branches: [main]
+        paths:
+            - 'client/**'
+            - '.github/workflows/deploy-wonderworld-fe.yml'
+    workflow_dispatch:
 
 concurrency:
-  group: deploy-wonderworld-fe
-  cancel-in-progress: true
+    group: deploy-wonderworld-fe
+    cancel-in-progress: true
 
 jobs:
-  deploy:
-    runs-on: [self-hosted, fe, nyc3, prod, frontend, wonderworld]
-    timeout-minutes: 20
-    steps:
-      - name: Deploy to fe-shark-nyc3-01
-        run: |
-          ~/bin/deploy-fe.sh "wonderworld.jeffolivier.com" "${GITHUB_REF_NAME:-main}"
+    deploy:
+        runs-on: [self-hosted, fe, nyc3, prod, frontend, do]
+        timeout-minutes: 20
+        steps:
+            - name: Deploy to fe-shark-nyc3-01
+              run: |
+                  ~/bin/deploy-fe.sh "wonderworld.jeffolivier.com" "${GITHUB_REF_NAME:-main}"
