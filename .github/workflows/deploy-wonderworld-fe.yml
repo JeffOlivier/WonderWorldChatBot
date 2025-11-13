@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
     deploy:
-        runs-on: [self-hosted, fe, nyc3, prod, frontend, do]
+        runs-on: [self-hosted, fe, nyc3, prod, fe, do]
         timeout-minutes: 20
         steps:
             - name: Deploy to fe-shark-nyc3-01
