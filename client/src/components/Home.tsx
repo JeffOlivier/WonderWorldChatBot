@@ -1,4 +1,5 @@
 import ChatBot from './chat/ChatBot';
+import CollapsibleBlock from './CollapsibleBlock';
 import coverImage from '@/assets/images/wonderworld-cover.png';
 
 const Home = () => {
@@ -32,26 +33,29 @@ const Home = () => {
                             info to food, restrooms, and nearby hotels. Just
                             type your question below and start exploring.
                         </p>
-                        <div className="text-slate-600 mt-4">
-                            <b>Here are a few ideas to get you started:</b>
-                            <ul className="list-disc ml-12">
-                                <li>
-                                    My kids are 8 and 10, what rides would they
-                                    like best?
-                                </li>
-                                <li>Where can I get an ice cream?</li>
-                                {/* <li>
+
+                        <CollapsibleBlock>
+                            <div className="text-slate-600">
+                                <b>Here are a few ideas to get you started:</b>
+                                <ul className="list-disc ml-12">
+                                    <li>
+                                        My kids are 8 and 10, what rides would
+                                        they like best?
+                                    </li>
+                                    <li>Where can I get an ice cream?</li>
+                                    {/* <li>
                                     Can you tell me where there’s a bathroom
                                     with a changing table?
                                 </li> */}
-                                <li>
-                                    We love it here and want to come back
-                                    tomorrow. What hotel do you recommend?
-                                </li>
+                                    <li>
+                                        We love it here and want to come back
+                                        tomorrow. What hotel do you recommend?
+                                    </li>
 
-                                <li>What are your hours this weekend?</li>
-                            </ul>
-                        </div>
+                                    <li>What are your hours this weekend?</li>
+                                </ul>
+                            </div>
+                        </CollapsibleBlock>
                     </div>
 
                     <div className="flex flex-col min-h-0 h-full">

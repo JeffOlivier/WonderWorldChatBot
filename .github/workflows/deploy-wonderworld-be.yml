@@ -1,23 +1,22 @@
 name: Deploy Wonderworld API
 
 on:
-  push:
-    branches: [ main ]
-    paths:
-      - 'server/**'
-      - '.github/workflows/deploy-wonderworld.yml'
-  workflow_dispatch:
+    push:
+        branches: [main]
+        paths:
+            - 'server/**'
+            - '.github/workflows/deploy-wonderworld.yml'
+    workflow_dispatch:
 
 concurrency:
-  group: deploy-wonderworld
-  cancel-in-progress: true
+    group: deploy-wonderworld
+    cancel-in-progress: true
 
 jobs:
-  deploy:
-    runs-on: [self-hosted, be, nyc3, prod, wonderworld]
-    timeout-minutes: 20
-    steps:
-      - name: Run deploy script on droplet
-        run: |
-          ~/bin/deploy-api.sh "api.wonderworld.jeffolivier.com" "${GITHUB_REF_NAME:-main}"
-
+    deploy:
+        runs-on: [self-hosted, be, nyc3, prod, wonderworld]
+        timeout-minutes: 20
+        steps:
+            - name: Run deploy script on droplet
+              run: |
+                  ~/bin/deploy-api.sh "api.wonderworld.jeffolivier.com" "${GITHUB_REF_NAME:-main}"
