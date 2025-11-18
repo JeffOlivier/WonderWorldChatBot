@@ -7,18 +7,18 @@ const Home = () => {
         <div className="min-h-screen flex items-center justify-center bg-slate-50">
             {/* 1) (above) Full-viewport wrapper that centers your card both vertically & horizontally */}
             {/* 2) (below) Your main container: full height, not full width, rounded, no page scroll */}
-            <div className="w-full max-w-3xl h-screen  bg-white rounded-2xl shadow-2xl/30 overflow-hidden">
+            <div className="w-full max-w-3xl h-screen bg-amber-200 rounded-2xl shadow-2xl/30 overflow-hidden">
                 {/* Prevent page scroll; build a vertical layout inside */}
                 <div className="flex h-full flex-col overflow-hidden ">
                     {/* 2) Image pinned to the top, spans full width of this container */}
                     <img
                         src={coverImage}
                         alt="Header"
-                        className="w-full h-1/6 sm:h-1/5 xl:h-1/4 flex-none"
+                        className="w-full h-1/6 sm:h-1/5 md:h-1/4 lg:h-1/3 flex-none"
                     />
 
                     {/* 3) Directions area under the image; sized to content */}
-                    <div className="p-2 sm:p-3 md:p-4 flex-none bg-amber-200 z-50 border-b-2 border-b-amber-400 text-sm">
+                    <div className="flex-none bg-amber-200 z-50 text-sm p-2 sm:p-3 md:p-4">
                         <h2 className="text-base sm:text-lg font-bold">
                             Welcome to Wonder World!
                         </h2>
@@ -60,7 +60,7 @@ const Home = () => {
                         </CollapsibleBlock>
                     </div>
 
-                    <div className="flex flex-col min-h-0 h-full">
+                    <div className="flex flex-col min-h-0 h-full px-2 sm:px-3 md:px-4 pb-8 sm:pb-3 md:pb-4">
                         <ChatBot />
                     </div>
                 </div>

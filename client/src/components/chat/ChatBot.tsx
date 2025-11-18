@@ -1,9 +1,8 @@
 import { useRef, useState } from 'react';
 import axios from 'axios';
-import TypingIndicator from '../TypingIndicator';
 import type { Message } from './ChatMessages';
-import ChatMessages from './ChatMessages';
 import ChatInput, { type ChatFormData } from './ChatInput';
+import ChatOutput from './ChatOutput';
 import popSound from '@/assets/sounds/pop.mp3';
 import notificationSound from '@/assets/sounds/notification.mp3';
 
@@ -59,19 +58,13 @@ const ChatBot = () => {
     };
 
     return (
-        <div className="flex-1 p-2 sm:p-3 md:p-4 pt-0 flex flex-col overflow-hidden">
+        <div className="flex-1 flex flex-col overflow-hidden">
             {/* Messages scroller with sticky fade */}
-            <div className="relative flex-1 overflow-y-auto">
-                {/* iMessage-style fade (stays put while content scrolls) */}
-                <div className="pointer-events-none sticky top-0 h-8 bg-gradient-to-b from-white/90 to-white/0 z-10" />
-
-                {/* Messages/content (does the actual scrolling) */}
-                <div className="flex flex-col gap-3 mb-6 px-4 -mt-4">
-                    <ChatMessages messages={messages} />
-                    {isBotTyping && <TypingIndicator />}
-                    {error && <p className="text-red-500">{error}</p>}
-                </div>
-            </div>
+            <ChatOutput
+                messages={messages}
+                isBotTyping={isBotTyping}
+                error={error}
+            />
 
             {/* ChatInput stays anchored at the bottom (no scroll) */}
             <ChatInput onSubmit={botOnSubmit} />

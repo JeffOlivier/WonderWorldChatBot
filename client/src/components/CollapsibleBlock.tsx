@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { ChevronUp, ChevronDown } from './ui/chevrons.tsx';
 
 type CollapsibleBlockProps = {
     introLabel?: string;
@@ -16,8 +17,9 @@ export default function CollapsibleBlock({
     className = '',
 }: CollapsibleBlockProps) {
     const [open, setOpen] = useState(defaultOpen);
-    const regionRef = useRef<HTMLDivElement | null>(null);
     const [maxH, setMaxH] = useState<number>(0);
+    const regionRef = useRef<HTMLDivElement | null>(null);
+
     const regionId = 'ideas-region';
 
     // Measure inner content for smooth height animation.
@@ -27,7 +29,7 @@ export default function CollapsibleBlock({
         const resize = () => {
             // compute the natural height of the content
             const content = el.firstElementChild as HTMLElement | null;
-            setMaxH(content ? content.scrollHeight : 0);
+            setMaxH(content ? content.scrollHeight + 18 : 0);
         };
         resize();
         // Recompute on resize/font loads
@@ -35,23 +37,6 @@ export default function CollapsibleBlock({
         ro.observe(el);
         return () => ro.disconnect();
     }, [children]);
-
-    const ChevronDown = (
-        <svg viewBox="0 0 20 20" aria-hidden="true" className="h-5 w-5">
-            <path
-                fill="currentColor"
-                d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.17l3.71-2.94a.75.75 0 0 1 .92 1.18l-4.24 3.36a.75.75 0 0 1-.92 0L5.21 8.41a.75.75 0 0 1 .02-1.2z"
-            />
-        </svg>
-    );
-    const ChevronUp = (
-        <svg viewBox="0 0 20 20" aria-hidden="true" className="h-5 w-5">
-            <path
-                fill="currentColor"
-                d="M14.77 12.79a.75.75 0 0 1-1.06-.02L10 9.83l-3.71 2.94a.75.75 0 0 1-.92-1.18l4.24-3.36a.75.75 0 0 1 .92 0l4.24 3.36c.34.27.39.76.09 1.1z"
-            />
-        </svg>
-    );
 
     return (
         <section className={['mt-2', className].join(' ')}>
@@ -82,16 +67,16 @@ export default function CollapsibleBlock({
                     opacity: open ? 1 : 0,
                 }}
                 className={`
-          overflow-hidden transition-[max-height,opacity]
-          duration-300 ease-out
-        `}
+                    overflow-hidden transition-[max-height,opacity]
+                    duration-300 ease-out
+                `}
             >
                 {/* Inner wrapper (measured) */}
-                <div className="mt-1 md:mt-3 rounded-xl border border-slate-200 bg-white/70 p-2 md:p-4 shadow-sm">
+                <div className="mt-1 md:mt-3 mb-2 md:mb-4 rounded-xl border-2 border-amber-400 bg-white/70 p-2 md:p-4 shadow-sm">
                     {children}
 
                     {/* BOTTOM trigger appears only when open */}
-                    <div className="mb-2 md:mb-4 flex justify-end -mr-2">
+                    <div className="flex justify-end -mr-2">
                         <button
                             type="button"
                             onClick={() => setOpen(false)}

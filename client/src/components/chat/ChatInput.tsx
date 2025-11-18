@@ -31,7 +31,7 @@ const ChatInput = ({ onSubmit }: Props) => {
     };
 
     return (
-        <div className="flex flex-row items-center gap-2 sm:gap-4 bg-amber-200 z-50 border-t-2 border-t-amber-400 -m-2 sm:-m-3 md:-m-4 px-1 py-2 sm:p-2 md:p-3 pb-8">
+        <div className="flex flex-row items-center gap-2 sm:gap-4 z-50 mt-4">
             <img
                 src={botty}
                 alt="Botty the AI Robot"
@@ -41,7 +41,7 @@ const ChatInput = ({ onSubmit }: Props) => {
                 <form
                     onSubmit={submitTheForm}
                     onKeyDown={handleKeyDown}
-                    className="flex flex-row gap-2 items-end border-2 p-2 sm:p-3 rounded-3xl bg-white"
+                    className="flex flex-row gap-2 items-end border-2 border-amber-400 p-2 sm:p-3 rounded-3xl bg-white"
                 >
                     <textarea
                         {...register('prompt', {
