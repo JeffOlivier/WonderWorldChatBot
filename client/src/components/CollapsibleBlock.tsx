@@ -37,7 +37,7 @@ export default function CollapsibleBlock({
     }, [children]);
 
     const ChevronDown = (
-        <svg viewBox="0 0 20 20" aria-hidden="true" className="h-4 w-4">
+        <svg viewBox="0 0 20 20" aria-hidden="true" className="h-5 w-5">
             <path
                 fill="currentColor"
                 d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.17l3.71-2.94a.75.75 0 0 1 .92 1.18l-4.24 3.36a.75.75 0 0 1-.92 0L5.21 8.41a.75.75 0 0 1 .02-1.2z"
@@ -45,7 +45,7 @@ export default function CollapsibleBlock({
         </svg>
     );
     const ChevronUp = (
-        <svg viewBox="0 0 20 20" aria-hidden="true" className="h-4 w-4">
+        <svg viewBox="0 0 20 20" aria-hidden="true" className="h-5 w-5">
             <path
                 fill="currentColor"
                 d="M14.77 12.79a.75.75 0 0 1-1.06-.02L10 9.83l-3.71 2.94a.75.75 0 0 1-.92-1.18l4.24-3.36a.75.75 0 0 1 .92 0l4.24 3.36c.34.27.39.76.09 1.1z"
@@ -54,7 +54,7 @@ export default function CollapsibleBlock({
     );
 
     return (
-        <section className={['mt-4', className].join(' ')}>
+        <section className={['mt-2', className].join(' ')}>
             {/* TOP trigger appears only when closed */}
             {!open && (
                 <div className="flex items-center">
@@ -63,7 +63,7 @@ export default function CollapsibleBlock({
                         onClick={() => setOpen(true)}
                         aria-expanded={open}
                         aria-controls={regionId}
-                        className="inline-flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-slate-900 underline underline-offset-4"
+                        className="inline-flex items-center gap-1 text-sm font-medium text-slate-700 hover:text-slate-900 underline underline-offset-4"
                     >
                         {introLabel}
                         {ChevronDown}
@@ -91,13 +91,13 @@ export default function CollapsibleBlock({
                     {children}
 
                     {/* BOTTOM trigger appears only when open */}
-                    <div className="my-2 md:my-4 flex justify-end">
+                    <div className="mb-2 md:mb-4 flex justify-end -mr-2">
                         <button
                             type="button"
                             onClick={() => setOpen(false)}
                             aria-expanded={open}
                             aria-controls={regionId}
-                            className="inline-flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-slate-900 underline underline-offset-4"
+                            className="inline-flex items-center gap-1 text-sm font-medium text-slate-700 hover:text-slate-900 underline underline-offset-4"
                         >
                             {closeLabel}
                             {ChevronUp}

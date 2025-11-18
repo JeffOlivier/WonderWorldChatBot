@@ -18,7 +18,7 @@ const Home = () => {
                     />
 
                     {/* 3) Directions area under the image; sized to content */}
-                    <div className="p-2 sm:p-3 md:p-4 flex-none bg-amber-200 z-50 border-b-2 border-b-amber-400 text-xs md:text-sm">
+                    <div className="p-2 sm:p-3 md:p-4 flex-none bg-amber-200 z-50 border-b-2 border-b-amber-400 text-sm">
                         <h2 className="text-base sm:text-lg font-bold">
                             Welcome to Wonder World!
                         </h2>
@@ -27,17 +27,11 @@ const Home = () => {
                             never stops and every visit brings something new to
                             discover.
                         </div>
-                        {/*<div className="text-slate-600 mt-2">
-                            I'm <b>Botty</b>, your friendly AI concierge! I can
-                            help you with anything from park hours and ride info
-                            to food, restrooms, and nearby hotels. Just type
-                            your question below and start exploring.
-                        </div>*/}
 
                         <CollapsibleBlock>
                             <div className="text-slate-600">
-                                <div className="text-slate-600 mb-2">
-                                    Hi, I'm <b>Botty</b>, your friendly AI
+                                <div className="text-slate-600 mb-3">
+                                    Hi 👋, I'm <b>Botty</b>, your friendly AI
                                     concierge! I can help you with anything from
                                     park hours and ride info to food, restrooms,
                                     and nearby hotels. Just type your question
@@ -46,15 +40,15 @@ const Home = () => {
 
                                 <b>Here are a few ideas to get you started:</b>
                                 <ul className="list-disc ml-4 md:ml-12">
-                                    <li className="mt-2 md:mt-0">
+                                    <li className="mt-0">
                                         My kids are 8 and 10, what rides would
                                         they like best?
                                     </li>
                                     <li>Where can I get an ice cream?</li>
-                                    {/* <li>
-                                    Can you tell me where there’s a bathroom
-                                    with a changing table?
-                                </li> */}
+                                    <li>
+                                        Can you tell me where there’s a bathroom
+                                        with a changing table?
+                                    </li>
                                     <li>
                                         We love it here and want to come back
                                         tomorrow. What hotel do you recommend?
