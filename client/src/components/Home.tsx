@@ -27,15 +27,23 @@ const Home = () => {
                             never stops and every visit brings something new to
                             discover.
                         </div>
-                        <div className="text-slate-600 mt-2">
-                            Meet <b>Botty</b>, our friendly AI concierge! Botty
-                            can help you with anything from park hours and ride
-                            info to food, restrooms, and nearby hotels. Just
-                            type your question below and start exploring.
-                        </div>
+                        {/*<div className="text-slate-600 mt-2">
+                            I'm <b>Botty</b>, your friendly AI concierge! I can
+                            help you with anything from park hours and ride info
+                            to food, restrooms, and nearby hotels. Just type
+                            your question below and start exploring.
+                        </div>*/}
 
                         <CollapsibleBlock>
                             <div className="text-slate-600">
+                                <div className="text-slate-600 mb-2">
+                                    Hi, I'm <b>Botty</b>, your friendly AI
+                                    concierge! I can help you with anything from
+                                    park hours and ride info to food, restrooms,
+                                    and nearby hotels. Just type your question
+                                    below and start exploring.
+                                </div>
+
                                 <b>Here are a few ideas to get you started:</b>
                                 <ul className="list-disc ml-4 md:ml-12">
                                     <li className="mt-2 md:mt-0">

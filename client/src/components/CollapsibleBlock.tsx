@@ -9,7 +9,7 @@ type CollapsibleBlockProps = {
 };
 
 export default function CollapsibleBlock({
-    introLabel = 'Click to see a few ideas to get you started',
+    introLabel = 'Click to meet Botty, our friendly AI concierge', //'Click to see a few ideas to get you started',
     closeLabel = 'Close',
     children,
     defaultOpen = false,
