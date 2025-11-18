@@ -66,7 +66,7 @@ const ChatBot = () => {
                 <div className="pointer-events-none sticky top-0 h-8 bg-gradient-to-b from-white/90 to-white/0 z-10" />
 
                 {/* Messages/content (does the actual scrolling) */}
-                <div className="flex flex-col gap-3 mb-4 px-4 -mt-4">
+                <div className="flex flex-col gap-3 mb-6 px-4 -mt-4">
                     <ChatMessages messages={messages} />
                     {isBotTyping && <TypingIndicator />}
                     {error && <p className="text-red-500">{error}</p>}
