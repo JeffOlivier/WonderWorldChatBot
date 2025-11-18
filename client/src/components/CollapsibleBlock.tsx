@@ -10,7 +10,7 @@ type CollapsibleBlockProps = {
 
 export default function CollapsibleBlock({
     introLabel = 'Click to see a few ideas to get you started',
-    closeLabel = 'Close idea suggestions',
+    closeLabel = 'Close',
     children,
     defaultOpen = false,
     className = '',
@@ -54,7 +54,7 @@ export default function CollapsibleBlock({
     );
 
     return (
-        <section className={['mt-6', className].join(' ')}>
+        <section className={['mt-4', className].join(' ')}>
             {/* TOP trigger appears only when closed */}
             {!open && (
                 <div className="flex items-center">
@@ -87,11 +87,11 @@ export default function CollapsibleBlock({
         `}
             >
                 {/* Inner wrapper (measured) */}
-                <div className="mt-3 rounded-xl border border-slate-200 bg-white/70 p-4 shadow-sm">
+                <div className="mt-1 md:mt-3 rounded-xl border border-slate-200 bg-white/70 p-2 md:p-4 shadow-sm">
                     {children}
 
                     {/* BOTTOM trigger appears only when open */}
-                    <div className="my-4 flex justify-end">
+                    <div className="my-2 md:my-4 flex justify-end">
                         <button
                             type="button"
                             onClick={() => setOpen(false)}

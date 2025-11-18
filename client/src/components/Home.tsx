@@ -14,31 +14,31 @@ const Home = () => {
                     <img
                         src={coverImage}
                         alt="Header"
-                        className="w-full h-64 md:h40 flex-none"
+                        className="w-full h-1/6 sm:h-1/5 xl:h-1/4 flex-none"
                     />
 
                     {/* 3) Directions area under the image; sized to content */}
-                    <div className="p-4 flex-none bg-amber-200 z-50 border-b-2 border-b-amber-400 text-sm">
-                        <h2 className="text-lg font-semibold">
+                    <div className="p-2 sm:p-3 md:p-4 flex-none bg-amber-200 z-50 border-b-2 border-b-amber-400 text-xs md:text-sm">
+                        <h2 className="text-base sm:text-lg font-bold">
                             Welcome to Wonder World!
                         </h2>
-                        <p className="text-slate-600">
+                        <div className="text-slate-600 mt-2">
                             The happiest place under the sun — where the fun
                             never stops and every visit brings something new to
                             discover.
-                        </p>
-                        <p className="text-slate-600 mt-4">
+                        </div>
+                        <div className="text-slate-600 mt-2">
                             Meet <b>Botty</b>, our friendly AI concierge! Botty
                             can help you with anything from park hours and ride
                             info to food, restrooms, and nearby hotels. Just
                             type your question below and start exploring.
-                        </p>
+                        </div>
 
                         <CollapsibleBlock>
                             <div className="text-slate-600">
                                 <b>Here are a few ideas to get you started:</b>
-                                <ul className="list-disc ml-12">
-                                    <li>
+                                <ul className="list-disc ml-4 md:ml-12">
+                                    <li className="mt-2 md:mt-0">
                                         My kids are 8 and 10, what rides would
                                         they like best?
                                     </li>

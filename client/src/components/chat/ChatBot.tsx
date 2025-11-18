@@ -59,7 +59,7 @@ const ChatBot = () => {
     };
 
     return (
-        <div className="flex-1 p-4 pt-0 flex flex-col overflow-hidden">
+        <div className="flex-1 p-2 sm:p-3 md:p-4 pt-0 flex flex-col overflow-hidden">
             {/* Messages scroller with sticky fade */}
             <div className="relative flex-1 overflow-y-auto">
                 {/* iMessage-style fade (stays put while content scrolls) */}
