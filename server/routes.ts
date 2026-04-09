@@ -6,7 +6,7 @@ const router = express.Router();
 
 // Health check
 router.get('/health', (_req, res) =>
-    res.json({ ok: true, time: new Date().toISOString() })
+    res.json({ status: 'ok', time: new Date().toISOString() })
 );
 
 // // Fun test routes
