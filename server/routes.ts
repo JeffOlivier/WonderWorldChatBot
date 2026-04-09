@@ -5,17 +5,17 @@ import { chatController } from './controllers/chat.controller';
 const router = express.Router();
 
 // Health check
-router.get('/api/health', (_req, res) =>
+router.get('/health', (_req, res) =>
     res.json({ ok: true, time: new Date().toISOString() })
 );
 
-// Fun test routes
-router.get('/', (req: Request, res: Response) => {
-    res.send('Hello from the server!');
-});
-router.get('/api/hello', (req: Request, res: Response) => {
-    res.json({ message: 'Hello World!' });
-});
+// // Fun test routes
+// router.get('/', (req: Request, res: Response) => {
+//     res.send('Hello from the server!');
+// });
+// router.get('/api/hello', (req: Request, res: Response) => {
+//     res.json({ message: 'Hello World!' });
+// });
 
 // Endpoint for receiving prompts from the user
 router.post('/api/chat', chatController.sendMessage);
